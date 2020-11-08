@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ThemeContext from './context/ThemeContext';
-import HomePage from './pages/HomePage';
+import HomePage from './pages/Home/HomePage';
 import Navbar from './layout/Navbar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { themes, Theme } from './themes';
@@ -25,20 +25,18 @@ const App = (): JSX.Element => {
             <div className="App">
                 <div>
                     <Router>
-                        <div>
-                            <Navbar />
-                            <Switch>
-                                <Route path="/blog">
-                                    <div> BLOG </div>
-                                </Route>
-                                <Route path="/resume">
-                                    <div> RESUME </div>
-                                </Route>
-                                <Route path="/">
-                                    <HomePage />
-                                </Route>
-                            </Switch>
-                        </div>
+                        <Navbar />
+                        <Switch>
+                            <Route path="/blog">
+                                <div> BLOG </div>
+                            </Route>
+                            <Route path="/resume">
+                                <div> RESUME </div>
+                            </Route>
+                            <Route path="/">
+                                <HomePage />
+                            </Route>
+                        </Switch>
                     </Router>
                 </div>
             </div>

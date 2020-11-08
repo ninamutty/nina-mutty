@@ -9,6 +9,8 @@ module.exports = {
         },
     },
     extends: [
+        'react-app',
+        'shared-config',
         'eslint:recommended',
         'plugin:react/recommended',
         'plugin:@typescript-eslint/recommended',
