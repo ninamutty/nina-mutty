@@ -8,6 +8,7 @@ import './App.css';
 
 const App = (): JSX.Element => {
     const [theme, setTheme] = useState(themes.camp);
+    const [activeTab, setActiveTab] = useState('Home');
 
     const getRandomTheme = (): Theme => {
         const keys = Object.keys(themes);
@@ -25,12 +26,15 @@ const App = (): JSX.Element => {
             <div className="App">
                 <div>
                     <Router>
-                        <Navbar />
+                        <Navbar
+                            activeTab={activeTab}
+                            setActiveTab={setActiveTab}
+                        />
                         <Switch>
                             <Route path="/blog">
                                 <div> BLOG </div>
                             </Route>
-                            <Route path="/resume">
+                            <Route path="/about">
                                 <div> RESUME </div>
                             </Route>
                             <Route path="/">

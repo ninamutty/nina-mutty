@@ -72,3 +72,4 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 -   ability to turn off animation
 -   check if canvas is available
 -   performance and accessibility audit
+-   add cache for canvas

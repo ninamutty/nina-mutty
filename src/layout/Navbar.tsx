@@ -1,20 +1,48 @@
-import React from 'react';
+import React, { SetStateAction, Dispatch } from 'react';
+import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import './Navbar.scss';
 
-const Navbar = (): JSX.Element => {
+const Navbar = ({
+    activeTab,
+    setActiveTab,
+}: {
+    activeTab: string;
+    setActiveTab: Dispatch<SetStateAction<string>>;
+}): JSX.Element => {
     return (
         <nav>
             <div className="navigation-container">
                 <ul className="navigation-list">
-                    <li>
-                        <Link to="/">Home</Link>
+                    <li
+                        className={classNames(
+                            activeTab === 'Home' ? 'active' : ''
+                        )}
+                    >
+                        <Link to="/" onClick={() => setActiveTab('Home')}>
+                            Home
+                        </Link>
                     </li>
-                    <li>
-                        <Link to="/resume">Resume</Link>
+                    <li
+                        className={classNames(
+                            activeTab === 'About' ? 'active' : ''
+                        )}
+                    >
+                        <Link
+                            to="/resume"
+                            onClick={() => setActiveTab('About')}
+                        >
+                            About
+                        </Link>
                     </li>
-                    <li>
-                        <Link to="/blog">Blog</Link>
+                    <li
+                        className={classNames(
+                            activeTab === 'Blog' ? 'active' : ''
+                        )}
+                    >
+                        <Link to="/blog" onClick={() => setActiveTab('Blog')}>
+                            Blog
+                        </Link>
                     </li>
                 </ul>
                 <div className="clr"></div>

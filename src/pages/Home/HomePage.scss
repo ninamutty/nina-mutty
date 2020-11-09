@@ -1,22 +1,37 @@
-.intro-container {
-    width: 90vw;
+.page-container {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    font-size: 0.75rem;
+    min-height: 100vh;
+}
+
+.blob {
+    position: absolute;
+    z-index: -1;
+}
+
+.canvas-fallBack {
+    background-color: black;
+    width: 80vw;
+    height: 80vw;
+    border-radius: 50%;
+    position: absolute;
 }
 
 .text-container {
-    // margin: auto;
-    position: fixed;
-    top: 40vh;
-    left: 28vw;
+    z-index: 5;
 }
 
 .title {
-    font-size: 1.5em;
+    font-size: 0.75em;
 }
 
 .name {
-    font-size: 5em;
+    font-size: 2.3em;
+    margin: 0;
 }
 
 .name,
@@ -28,48 +43,50 @@
     letter-spacing: 0.2em;
 }
 
-.headshot-container {
-    border-bottom: 1px solid lightgray;
-    transition: all 0.5s ease;
-}
-.portrait {
-    width: 80vw;
-}
-
-.intro {
-    margin: 1vh;
-}
-
-.bio {
-    margin: 0 0 1vh 0;
-}
-
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
-    .headshot-container {
-        border-bottom: 1px solid lightgray;
+    .title {
+        font-size: 0.75em;
+    }
+
+    .name {
+        font-size: 2.3em;
+    }
+
+    .canvas-fallBack {
+        width: 80vw;
+        height: 80vw;
     }
 }
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
-    .intro-container {
-        width: 45vw;
-        text-align: center;
+    .title {
+        font-size: 1.2em;
     }
 
-    .headshot-container {
-        border-bottom: 1px solid lightgray;
-        transition: all 0.5s ease;
+    .name {
+        font-size: 3.5em;
     }
-    .portrait {
-        width: 40vw;
+
+    .canvas-fallBack {
+        width: 70vw;
+        height: 70vw;
     }
 }
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
-    .headshot-container {
-        border-bottom: 1px solid lightgray;
+    .title {
+        font-size: 1.5em;
+    }
+
+    .name {
+        font-size: 5em;
+    }
+
+    .canvas-fallBack {
+        width: 60vw;
+        height: 60vw;
     }
 }

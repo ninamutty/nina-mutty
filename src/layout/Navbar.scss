@@ -1,6 +1,6 @@
 .navigation-container {
     width: 100%;
-    background: white;
+    position: fixed;
 }
 
 .navigation-name {
@@ -21,26 +21,28 @@
 
 .navigation-list li {
     display: inline-block;
-    padding: 20px 30px;
+    padding: 10px 15px;
+}
+
+.navigation-list li a:hover {
+    border: 1px solid black;
+    border-radius: 15%;
+    transition: all 0.5s ease-in-out;
+}
+
+.navigation-list li.active a {
+    border-bottom: 1px solid black;
 }
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
-    .page-container {
-        margin: 0 7%;
+    .navigation-list li {
+        padding: 10px 20px;
     }
 }
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
-    .page-container {
-        margin: 0 5%;
-    }
-
-    .navigation-name {
-        padding: 20px 30px;
-    }
-
     .navigation-list li {
         padding: 20px 30px;
     }
@@ -48,7 +50,7 @@
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
-    .page-container {
-        margin: 0 7%;
+    .navigation-list li {
+        padding: 20px 30px;
     }
 }
