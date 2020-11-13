@@ -15,11 +15,11 @@ const Blob = ({
     color: string;
     isRunning: boolean;
 }): JSX.Element => {
-    // const points: ExamplePoint[] = [];
     const NUM_POINTS = 32;
     const DIVISIONAL = (Math.PI * 2) / NUM_POINTS;
 
-    const [points, setPoints] = useState<ExamplePoint[]>([]);
+    const [points] = useState<ExamplePoint[]>([]);
+
     const [radius, setRadius] = useState(
         document.documentElement.clientHeight >
             document.documentElement.clientWidth
@@ -96,7 +96,6 @@ const Blob = ({
             };
 
             // register the mouse enter events
-            // mouseMove = () => {
             canvas.setAttribute('touch-action', 'none');
 
             let oldMousePoint = { x: 0, y: 0 };
@@ -159,10 +158,8 @@ const Blob = ({
                 oldMousePoint.x = e.clientX;
                 oldMousePoint.y = e.clientY;
             };
-            // };
 
             const drawBlob = () => {
-                console.log('drawing');
                 const ctx = canvas.getContext('2d');
 
                 if (!ctx) return;

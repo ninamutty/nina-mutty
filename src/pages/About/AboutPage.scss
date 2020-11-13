@@ -1,0 +1,26 @@
+.portrait {
+    width: 45vw;
+    bottom: 0;
+    position: absolute;
+}
+
+// small devices
+@media (min-width: 576px) {
+    .portrait {
+        width: 85vw;
+    }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+    .portrait {
+        width: 65vw;
+    }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+    .portrait {
+        width: 45vw;
+    }
+}

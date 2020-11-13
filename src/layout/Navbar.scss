@@ -24,13 +24,17 @@
     padding: 10px 15px;
 }
 
+.navigation-list li a {
+    border: 1px solid white;
+}
+
 .navigation-list li a:hover {
     border: 1px solid black;
     border-radius: 15%;
     transition: all 0.5s ease-in-out;
 }
 
-.navigation-list li.active a {
+.navigation-list li a.active {
     border-bottom: 1px solid black;
 }
 

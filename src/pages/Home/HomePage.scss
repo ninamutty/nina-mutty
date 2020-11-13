@@ -8,6 +8,11 @@
     min-height: 100vh;
 }
 
+.background-blob {
+    width: 10vw;
+    position: absolute;
+}
+
 .blob {
     position: absolute;
     z-index: -1;

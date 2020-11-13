@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ThemeContext from './context/ThemeContext';
 import HomePage from './pages/Home/HomePage';
+import AboutPage from './pages/About/AboutPage';
 import Navbar from './layout/Navbar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { themes, Theme } from './themes';
@@ -8,7 +9,6 @@ import './App.css';
 
 const App = (): JSX.Element => {
     const [theme, setTheme] = useState(themes.camp);
-    const [activeTab, setActiveTab] = useState('Home');
 
     const getRandomTheme = (): Theme => {
         const keys = Object.keys(themes);
@@ -26,16 +26,13 @@ const App = (): JSX.Element => {
             <div className="App">
                 <div>
                     <Router>
-                        <Navbar
-                            activeTab={activeTab}
-                            setActiveTab={setActiveTab}
-                        />
+                        <Navbar />
                         <Switch>
                             <Route path="/blog">
                                 <div> BLOG </div>
                             </Route>
                             <Route path="/about">
-                                <div> RESUME </div>
+                                <AboutPage />
                             </Route>
                             <Route path="/">
                                 <HomePage />
