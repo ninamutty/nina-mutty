@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/nina-mutty/static/css/main.da574bf2.chunk.css",
+    "main.js": "/nina-mutty/static/js/main.ca32756d.chunk.js",
+    "main.js.map": "/nina-mutty/static/js/main.ca32756d.chunk.js.map",
+    "runtime-main.js": "/nina-mutty/static/js/runtime-main.c1cc19d6.js",
+    "runtime-main.js.map": "/nina-mutty/static/js/runtime-main.c1cc19d6.js.map",
+    "static/js/2.19ed9be6.chunk.js": "/nina-mutty/static/js/2.19ed9be6.chunk.js",
+    "static/js/2.19ed9be6.chunk.js.map": "/nina-mutty/static/js/2.19ed9be6.chunk.js.map",
+    "index.html": "/nina-mutty/index.html",
+    "precache-manifest.a05873d7d2d68ee93eb3761e655174f9.js": "/nina-mutty/precache-manifest.a05873d7d2d68ee93eb3761e655174f9.js",
+    "service-worker.js": "/nina-mutty/service-worker.js",
+    "static/css/main.da574bf2.chunk.css.map": "/nina-mutty/static/css/main.da574bf2.chunk.css.map",
+    "static/js/2.19ed9be6.chunk.js.LICENSE.txt": "/nina-mutty/static/js/2.19ed9be6.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c1cc19d6.js",
+    "static/js/2.19ed9be6.chunk.js",
+    "static/css/main.da574bf2.chunk.css",
+    "static/js/main.ca32756d.chunk.js"
+  ]
+}
