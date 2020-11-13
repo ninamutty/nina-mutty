@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ThemeContext from './context/ThemeContext';
 import HomePage from './pages/Home/HomePage';
-import Navbar from './layout/Navbar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { themes, Theme } from './themes';
 import './App.css';
@@ -24,25 +23,7 @@ const App = (): JSX.Element => {
     return (
         <ThemeContext.Provider value={theme}>
             <div className="App">
-                <div>
-                    <Router>
-                        <Navbar
-                            activeTab={activeTab}
-                            setActiveTab={setActiveTab}
-                        />
-                        <Switch>
-                            <Route path="/blog">
-                                <div> BLOG </div>
-                            </Route>
-                            <Route path="/about">
-                                <div> RESUME </div>
-                            </Route>
-                            <Route path="/">
-                                <HomePage />
-                            </Route>
-                        </Switch>
-                    </Router>
-                </div>
+                <HomePage />
             </div>
         </ThemeContext.Provider>
     );

@@ -8,6 +8,17 @@
     min-height: 100vh;
 }
 
+.animation-toggle {
+    top: 3vh;
+    right: 3vw;
+    position: absolute;
+    // background-color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    color: white;
+}
+
 .blob {
     position: absolute;
     z-index: -1;
