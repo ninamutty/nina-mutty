@@ -1,7 +1,5 @@
 import React, { useEffect, useState, useLayoutEffect } from 'react';
-// import Point from './Point';
 import ExamplePoint from './ExamplePoint';
-// import './Blob.scss';
 
 export type Center = {
     x: number;
@@ -15,11 +13,9 @@ const Blob = ({
     color: string;
     isRunning: boolean;
 }): JSX.Element => {
-    // const points: ExamplePoint[] = [];
     const NUM_POINTS = 32;
     const DIVISIONAL = (Math.PI * 2) / NUM_POINTS;
 
-    const [points, setPoints] = useState<ExamplePoint[]>([]);
     const [radius, setRadius] = useState(
         document.documentElement.clientHeight >
             document.documentElement.clientWidth
@@ -35,6 +31,7 @@ const Blob = ({
         let requestId: number;
         let mouseMove: () => void;
         let timeoutResize: () => void;
+        const points: ExamplePoint[] = [];
 
         const canvas = document.getElementById('blob') as HTMLCanvasElement;
 
@@ -81,6 +78,7 @@ const Blob = ({
                 }
             };
             window.addEventListener('resize', timeoutResize);
+            // window.addEventListener('orientationchange', timeoutResize)
             resize();
 
             // create points to animate
@@ -96,7 +94,6 @@ const Blob = ({
             };
 
             // register the mouse enter events
-            // mouseMove = () => {
             canvas.setAttribute('touch-action', 'none');
 
             let oldMousePoint = { x: 0, y: 0 };
@@ -159,10 +156,8 @@ const Blob = ({
                 oldMousePoint.x = e.clientX;
                 oldMousePoint.y = e.clientY;
             };
-            // };
 
             const drawBlob = () => {
-                console.log('drawing');
                 const ctx = canvas.getContext('2d');
 
                 if (!ctx) return;
@@ -228,7 +223,12 @@ const Blob = ({
             : document.documentElement.clientHeight;
     return (
         <canvas className="blob" id="blob" width={size} height={size}>
-            <div className="canvas-fallBack" />
+            <div
+                className="canvas-fallBack"
+                style={{
+                    backgroundColor: color,
+                }}
+            />
         </canvas>
     );
 };
