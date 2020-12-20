@@ -1,0 +1,19 @@
+.App {
+    width: 100vw;
+}
+
+.App a:-webkit-any-link {
+    text-decoration: none;
+    color: black;
+    padding: 5px;
+}
+
+@media (prefers-color-scheme: dark) {
+    .App {
+        background-color: #151414;
+    }
+
+    .App a:-webkit-any-link {
+        color: #e4e3e3;
+    }
+}
