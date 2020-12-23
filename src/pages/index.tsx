@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react"
 import ThemeContext from "../context/ThemeContext"
-import HomePage from "./Home/HomePage"
+import BlobContainer from "../components/Blob/BlobContainer"
 import { themes, Theme } from "./themes"
-import "./App.css"
 
 const App = (): JSX.Element => {
   const [theme, setTheme] = useState(themes.camp)
@@ -21,7 +20,7 @@ const App = (): JSX.Element => {
   return (
     <ThemeContext.Provider value={theme}>
       <div className="App">
-        <HomePage />
+        <BlobContainer />
       </div>
     </ThemeContext.Provider>
   )

@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useLayoutEffect } from 'react';
-import ExamplePoint from './ExamplePoint';
+import classNames from 'classNames'
+import Point from './Point';
 
 export type Center = {
     x: number;
@@ -8,13 +9,14 @@ export type Center = {
 
 const Blob = ({
     color,
-    isRunning,
 }: {
     color: string;
-    isRunning: boolean;
 }): JSX.Element => {
     const NUM_POINTS = 32;
     const DIVISIONAL = (Math.PI * 2) / NUM_POINTS;
+
+    const [isRunning, setIsRunning] = useState(true);
+    const [useWidth, setUseWidth] = useState(true);
 
     const [radius, setRadius] = useState(
         document.documentElement.clientHeight >
@@ -27,11 +29,26 @@ const Blob = ({
         y: document.documentElement.clientHeight / 2,
     });
 
+    useLayoutEffect(() => {
+        if (document.documentElement.clientHeight < document.documentElement.clientWidth) {
+            setUseWidth(false);
+        }
+    }, []);
+
+    useLayoutEffect(() => {
+        const prefersReducedMotion = window.matchMedia(
+            '(prefers-reduced-motion: reduce)'
+        );
+        if (prefersReducedMotion.matches) {
+            setIsRunning(false);
+        }
+    }, []);
+
     useEffect(() => {
         let requestId: number;
         let mouseMove: () => void;
         let timeoutResize: () => void;
-        const points: ExamplePoint[] = [];
+        const points: Point[] = [];
 
         const canvas = document.getElementById('blob') as HTMLCanvasElement;
 
@@ -84,7 +101,7 @@ const Blob = ({
             // create points to animate
             const createPoints = () => {
                 for (let i = 0; i < NUM_POINTS; i++) {
-                    let point = new ExamplePoint(
+                    let point = new Point(
                         DIVISIONAL * (i + 1),
                         center,
                         radius
@@ -125,7 +142,7 @@ const Blob = ({
 
                 // figure out if we've cross the blob boundary, if we have animate points
                 if (Math.abs(angle) > 0) {
-                    let nearestPoint: ExamplePoint | undefined;
+                    let nearestPoint: Point | undefined;
                     let distanceFromPoint = 100;
                     points.forEach(point => {
                         if (
@@ -222,12 +239,17 @@ const Blob = ({
             ? document.documentElement.clientWidth
             : document.documentElement.clientHeight;
     return (
-        <canvas className="blob" id="blob" width={size} height={size}>
+        <canvas className="absolute" id="blob" width={size} height={size}>
             <div
-                className="canvas-fallBack"
-                style={{
-                    backgroundColor: color,
-                }}
+                className={classNames(
+                    'absolute', 
+                    'rounded-full', 
+                    'bg-gray-900',
+                    'dark:bg-gray-100',
+                    useWidth ? 'lg:w-blobWidthLg lg:h-blobWidthLg' : 'lg:w-blobHeightLg lg:h-blobHeightLg', 
+                    useWidth ? 'md:w-blobWidthMd md:h-blobWidthMd' : 'md:w-blobHeightMd md:h-blobHeightMd', 
+                    useWidth ? 'w-blobWidthSm h-blobWidthSm' : 'w-blobHeightSm h-blobHeightSm', 
+                    )}
             />
         </canvas>
     );
