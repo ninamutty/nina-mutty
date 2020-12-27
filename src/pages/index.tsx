@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react"
 import ThemeContext from "../context/ThemeContext"
+import { themes, Theme } from "../context/themes"
 import BlobContainer from "../components/Blob/BlobContainer"
-import { themes, Theme } from "./themes"
 
 const App = (): JSX.Element => {
-  const [theme, setTheme] = useState(themes.camp)
+  const [theme, setTheme] = useState(themes.blueGray)
 
   const getRandomTheme = (): Theme => {
     const keys = Object.keys(themes)

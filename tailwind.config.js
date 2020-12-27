@@ -1,4 +1,3 @@
-const { cyan } = require('tailwindcss/colors')
 const colors = require('tailwindcss/colors')
 
 module.exports = {
@@ -30,9 +29,25 @@ module.exports = {
       },
       colors: {
         warmGray: colors.warmGray,
-        cyan: colors.cyan,
         blueGray: colors.blueGray,
-        coolGray: colors.coolGray,
+        cran: {
+          900: '#3B0D11',
+          800: '#64161D',
+          300: '#c9867f',
+          200: '#e9cac3'
+        },
+        camel: {
+          900: '#A7998B',
+          800: '#C2B8AE',
+          300: '#A7998B',
+          200: '#C2B8AE'
+        },
+        armyGreen: {
+          900: '#5B6057',
+          800: '#989E94',
+          300: '#a5a58d',
+          200: '#b7b7a4'
+        }
       }
     },
   },
