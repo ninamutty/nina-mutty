@@ -4,8 +4,6 @@ import Blob from "./Blob"
 
 const App = (): JSX.Element => {
   const [isLightMode, setIsLightMode] = useState(true)
-  const darkGray = "#0F172A"
-  const lightGray = "#F1F5F9"
 
   useLayoutEffect(() => {
     if (window.matchMedia("(prefers-color-scheme)").media !== "not all") {
