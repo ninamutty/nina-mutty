@@ -18,7 +18,7 @@ const App = (): JSX.Element => {
     <ThemeContext.Consumer>
       {value => (
         <div className="w-screen min-h-screen justify-items-center text-center justify-center flex flex-col dark:bg-coolGray-900">
-          <Blob color={isLightMode ? value['900'] : value['200'] } />
+          <Blob color={isLightMode ? value["900"] : value["200"]} />
           <div className="z-10">
             <h1 className="text-4xl sm:text-4xl md:text-5xl lg:text-8xl uppercase text-center font-extralight tracking-widest text-white dark:text-coolGray-900">
               Nina Mutty

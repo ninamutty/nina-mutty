@@ -30,6 +30,7 @@ module.exports = {
       colors: {
         warmGray: colors.warmGray,
         blueGray: colors.blueGray,
+        pink: colors.pink,
         cran: {
           900: '#3B0D11',
           800: '#64161D',

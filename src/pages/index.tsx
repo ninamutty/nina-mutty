@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useLayoutEffect } from "react"
 import ThemeContext from "../context/ThemeContext"
 import { themes, Theme } from "../context/themes"
+import MetaData from "../context/MetaData"
 import BlobContainer from "../components/Blob/BlobContainer"
 
 const App = (): JSX.Element => {
@@ -13,15 +14,16 @@ const App = (): JSX.Element => {
     return themes[key]
   }
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     setTheme(getRandomTheme())
   }, [])
 
   return (
     <ThemeContext.Provider value={theme}>
-      <div className="App">
+      <MetaData />
+      {/* <div className="App"> */}
         <BlobContainer />
-      </div>
+      {/* </div> */}
     </ThemeContext.Provider>
   )
 }
