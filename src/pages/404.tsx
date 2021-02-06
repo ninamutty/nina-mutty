@@ -5,9 +5,9 @@ const NotFoundContent = () => {
   const [time, setTime] = useState(10)
 
   useEffect(() => {
-    // if (time <= 0) {
-    //     window.location.href = '/'
-    // }
+    if (time <= 0) {
+        window.location.href = '/'
+    }
 
     const interval = setInterval(() => {
       setTime(time - 1)
