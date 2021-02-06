@@ -1,6 +1,6 @@
-import React from 'react';
-import { themes } from '../themes';
+import React from "react"
+import { themes, Theme } from "./themes"
 
-const ThemeContext = React.createContext(themes.camp);
+const ThemeContext = React.createContext<Theme>(themes.blueGray)
 
-export default ThemeContext;
+export default ThemeContext

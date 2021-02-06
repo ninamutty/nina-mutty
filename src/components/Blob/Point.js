@@ -1,4 +1,4 @@
-class ExamplePoint {
+class Point {
     constructor(azimuth, center, radius) {
         this.center = center;
         this.radius = radius;
@@ -81,4 +81,4 @@ class ExamplePoint {
         return this._friction || 0.0085;
     }
 }
-export default ExamplePoint;
+export default Point;
